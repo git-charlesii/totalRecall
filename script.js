@@ -197,6 +197,64 @@ const thomsCloset = [["grey button-up", "dark grey button-up",  "light blue butt
 // Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
 
 
+// A. Make a user object
+// Create an object called user.
+// Write in to the object the key-value pairs for name, email, age, and purchased. Set the value of purchased to an empty array []. Set the other values to whatever you would like.
+
+
+let user = {
+  name: 'Charles',
+  email: '123Chuck@nunya.com',
+  purchased: [],
+}
+// B. Update the user
+// Our user has changed his or her email address. Without changing the original user object, update the email value to a new email address.
+
+
+console.log(user);
+user.email = '123Chuck@nunya.com';
+user['email'] = 'notCharles@nunya.com';
+console.log(user);
+
+// Our user has had a birthday! Without changing the original user object, increment the age value using the postfix operator. Hint: age++
+
+// C. Adding keys and values
+// You have decided to add your user's location to the data that you want to collect.
+// Without changing the original user object, add a new key location to the object, and give it a value or some-or-other location (a string).
+
+user.address = '123 main street, Oz.';
+console.log(user);
+console.log(user.address);
+
+// D. Shopaholic!
+// Our user has purchased an item! They have purchased some "carbohydrates". Using .push(), add the string "carbohydrates" to the purchased array.
+
+console.log(user.purchased);
+user.purchased.push('carbohydrates');
+console.log(user.purchased);
+console.log(user);
+
+// Our user has purchased an item! They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the purchased array.
+
+user.purchased.push('peace of mind');
+console.log(user.purchased);
+
+// Our user has purchased an item! They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchased array.
+
+
+// Console.log just the "Merino jodhpurs" from the purchased array.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
