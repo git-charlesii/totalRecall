@@ -241,9 +241,194 @@ console.log(user.purchased);
 
 // Our user has purchased an item! They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchased array.
 
+user.purchased.push('Merino jodhpurs');
+console.log(user.purchased);
 
 // Console.log just the "Merino jodhpurs" from the purchased array.
 
+console.log(user.purchased[2]);
+
+// Write a friend object into your user object and give the friend a name, age, location, and purchased array (empty for now)
+
+user.friend = {
+  name: 'Lenny',
+  age: 59,
+  location: 'Eleuthera',
+  purchased: [],
+  }
+
+  // Console.log just the friend's name
+  console.log(user.friend.name);
+
+  // Console.log just the friend's location
+  console.log(user.friend.location);
+
+  // CHANGE the friend's age to 55
+  user.friend.age = (55);
+  console.log(user.friend.age);
+  
+  // The friend has purchased "The One Ring". Use ``.push()to add "The One Ring" to the friend'spurchased` array.
+  user.friend.purchased.push('The One Ring');
+  console.log(user.friend.purchased);
+
+//   The friend has purchased "A latte". Use .push() to add "A latte" to the friend's purchased array.
+// Console.log just "A latte" from the friend's purchased array.
+
+  user.friend.purchased.push('A latte');
+
+  console.log(user.friend.purchased[1]);
+
+  // F. Loops
+  // Write a for loop that iterates over the User's purchased array (NOT the friend's purchased array), and prints each element to the console.
+  // Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
+
+
+// IV. Functions
+// A. printGreeting - write a function called printGreeting with a parameter name that returns a greeting with the argument interpolated into the greeting
+
+function printGreeting(name) {
+  return `Buenas, ${name}! Hola!`;
+  
+}
+let name = 'Carlos';
+console.log(printGreeting(name));
+
+// B. printCool
+// Write a function printCool that accepts one parameter, name as an argument. The function should print the name and a message saying that that person is cool.
+
+// Write a function PrintCool that accepts one parameter, name as an argument
+function printCool(name) {
+  return (`${name} is super cool.`)
+}
+ console.log(printCool(name));
+// console.log(printCool("Captain Reynolds"));
+// => "Captain Reynolds is cool";
+
+// C. calculateCube
+// Write a function calculateCube that takes a single number and prints the volume of a cube made from that number.
+// console.log(calculateCube(5));
+// => 125
+
+function calculateCube(i) {
+  let volume = i ** 3;
+  return volume;
+}
+console.log(calculateCube(6));
+
+// D. isVowel
+// Write a function isVowelthat takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case. Test your function on every vowel and make sure it's working. In general, when you write functions, take a minute to test them with different values to make sure they behave the way you want.
+// console.log(isVowel("a"));
+// => true
+
+function isVowelthat(i) {
+  // for most of the time dealing with this, i left out the 'or' characters and my argument was not enclosed within a string.  most my mistakes have been syntax and order, not necessarily the logic, although i still struggle a bit with thinking like the computer.
+  return i === 'a' || i === 'e' || i === 'i' || i === 'o' || i === 'u';
+  
+}
+console.log(isVowelthat('p'));
+
+// E. getTwoLengths
+// Write a function getTwoLengths that accepts two parameters (strings). The function should return an array of numbers where each number is the length of the corresponding string.
+// console.log(getTwoLengths("Hank", "Hippopopalous"));
+// => [4, 13]
+
+  function getTwoLengths(string1 , string2) {
+    return [string1.length,  string2.length];
+  }
+  console.log(getTwoLengths('frustrated', 'sheeesh'));
+
+
+
+// Part 1. Math Problems
+
+
+// The initial numbers that must be verified.
+const n1 = 10;
+const n2 = 15;
+const n3 = 20;
+const n4 = 5;
+
+// Check one: add up to 50
+// This is a fairly simple operation using
+// arithmetic operators and a comparison.
+const isSum50 = (n1 + n2 + n3 + n4) == 50;
+console.log('The sum of the numbers is 50:' + isSum50);
+
+// Check two: at least two odd numbers
+// Here, we use modulus to check if something is odd.
+// Since % 2 is 0 if even and 1 if odd, we can use
+// arithmetic to count the total number of odd numbers.
+const isTwoOdd = (n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2;
+console.log('At least two of the preceding calculations are odd:' + isTwoOdd);
+// Check three: no number larger than 25
+// This time, we use the OR operator to check
+// if ANY of the numbers is larger than 25.
+const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
+console.log('Are any of the numbers larger than 25? True or False?' + isOver25);
+// Check four: all unique numbers
+// This is long, and there are more efficient
+// ways of handling it with other data structures
+// that we will review later.
+const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4;
+console.log('All of these numbers are unique?' + isUnique);
+
+// Here, we put the results into a single variable 
+// for convenience. Note how we negate isOver25 using
+// the ! operator. We could also have tested for 
+// "isUnder25" as an alternative.
+const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
+
+// Finally, log the results.
+console.log(isValid);
+
+// Here's another example of how this COULD be done,
+// but it SHOULD NOT be done this way. As programmers,
+// we break things into small, manageable pieces so that
+// they can be better understood, scaled, and maintained.
+const dontDoThis = ((n1 + n2 + n3 + n4) == 50) && 
+  ((n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2) && 
+  !(n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25) && 
+  (n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4);
+console.log(dontDoThis);
+
+
+//Part 2: Practical Math
+
+
+//   Let’s look at a more practical scenario.
+//   You are planning a cross-country road trip!
+//   The distance of the trip, in total, is 1,500 miles.
+const totalDistance = 1500;
+//   Your car’s fuel efficiency is as follows:
+//   At 55 miles per hour, you get 30 miles per gallon.
+//   At 60 miles per hour, you get 28 miles per gallon.
+//   At 75 miles per hour, you get 23 miles per gallon.
+const fuelEfficiency = {
+  55 /*miles per hour*/ : 30, /*miles per gallon*/
+  60 /*miles per hour*/ : 28, /*miles per gallon*/
+  75 /*miles per hour*/ : 23 /*miles per gallon*/
+
+}
+// fuel budget
+//   You have a fuel budget of $175.
+const fuelBudget = 175; /*dollars*/
+//   The average cost of fuel is $3 per gallon.
+const fuelCostperGallon = 3; /*dollars/gallon*/
+//   Set up a program to answer the following questions:
+//   How many gallons of fuel will you need for the entire trip?
+// total fuel cost at 55, 60, and 75 mph
+
+
+//   Will your budget be enough to cover the fuel expense?
+//   How long will the trip take, in hours?
+//   Compare the results when traveling at an average of 55, 60, and 75 miles per hour. Which makes the most sense for the trip?
+// Log the results of your calculations using string concatenation or template literals.
+
+// total distance of the trip
+// INCOMPLETE
+
+
+// fuel budget
 
 
 
@@ -270,8 +455,6 @@ console.log(user.purchased);
 
 
 
-
-
-
-
-
+              
+              
+              
